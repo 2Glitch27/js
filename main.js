@@ -55,4 +55,37 @@
 // let price = +prompt('Введите цену');
 // alert (wallet - price);
 
+// let x = +prompt ("Введите число");
+// if(x > 0 ){
+//     alert ( " Число больше 0")
+// } else if ( x < 0 ){
+//     alert ( " Число меньше 0")
+// } else ( x = 0){
+//     alert ( " Число  0")
+// }
 
+
+// let x = +prompt ("Введите число");
+// if(x > 0 && x < 120 ){
+//     alert ( " Число больше 0")
+// } else {
+//     alert ( " Что то пошло не так")
+// }
+
+// switch(){
+//     case 1:
+//         console.log()
+//     break;
+//      case 1:
+//         console.log()
+//     break;
+//      case 1:
+//         console.log()
+//     break;
+//      case 1:
+//      case 1:
+//         console.log()
+//     default:
+//         console.log()
+
+// }
