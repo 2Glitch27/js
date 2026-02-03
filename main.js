@@ -55,6 +55,14 @@
 // let price = +prompt('Введите цену');
 // alert (wallet - price);
 
+
+
+
+
+
+
+
+
 // let x = +prompt ("Введите число");
 // if(x > 0 ){
 //     alert ( " Число больше 0")
@@ -88,4 +96,20 @@
 //     default:
 //         console.log()
 
-// }
+
+
+
+
+
+
+// let year = +prompt ("Введите год");
+// let test1 = year % 400;
+// let test2 = year % 4;
+// let test3 = year % 100;
+// if(test1 == 0 || test2 == 0 && test3 > 0 ){
+//     alert ( " год високосный")
+// } else {
+//     alert ( " год не високосный")
+// } 
+
+// console.log ( 251 % 100)
