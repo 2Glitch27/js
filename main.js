@@ -127,3 +127,101 @@
 // console.log ( 251 % 100)
 
 
+//вывести h столько сколько пользователь запросит
+
+// let x = +prompt();
+// let i = 0
+// while(i < x){
+//     console.log(" h");
+//     i++;
+// }
+
+// вывести числа от введенного до 0
+// let x = +prompt("ss");
+// while( x >= 0 ){
+// console.log(x);
+//     x--;
+//     
+// }
+
+
+// предлагать решать пока не ответит правильно 2+2*2
+
+// let x = 0;
+// do{
+//     x = +prompt(" введите ")
+// }while(x !==6);
+// alert ( " ");
+
+//codewars задачи leetcode
+
+
+// function sum(x, y){
+//     let sum = x + y;
+// console.log(" сумма двух чисел" + sum);
+// }
+// sum( 5, 10);
+
+//function sum(x, y){
+//     let sum = x + y;
+//  return sum;
+// }
+// const Tsum = sum( 5, 10);
+//console.log(Tsum)
+
+//const sayHello = function (){
+//     alert(" ff");
+// }
+
+//анонимные функции чекни
+
+
+// const arrowFunc = () => 
+// const arrowFunc = ( x, y) => x + y
+
+
+
+// принимает 2 числа и возвращает меньшее
+// const minValue = (x, y) => {
+//    return Math.min(x, y); 1
+//     if( x > y){           2
+//     return y
+// }return x
+//    }
+// console.log (minValue (10, 5))
+
+// let x = +prompt();
+// let y = +prompt();
+
+// if ( x > y){
+//     console.log(y);
+// } else{
+//     console.log(x);
+// }
+
+// if( x > y){
+//     return y
+// }else{
+//     return x
+// }
+
+// if( x > y){
+//     return y
+// }return x
+
+
+
+// const calc = ( x, y, sing) => {
+//     switch (sing) {
+//         case "+" :
+//             return x + y;
+//         case "-" :
+//             return x - y;
+//         case "*" :
+//             return x * y;
+//         case "/" :
+//             return x / y;
+//     }
+// }
+
+// console.log(calc(10, 5 "+"))
