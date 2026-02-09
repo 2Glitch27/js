@@ -225,3 +225,49 @@
 // }
 
 // console.log(calc(10, 5 "+"))
+
+
+
+// const objOld = new Object ();
+// let objNew = {
+//     name: 'Никита',
+//     secondName: 'Елагин',    //всегда ставить запятую даже в конце
+
+
+// };
+// console.log(objNew.name);
+// objNew.age = 28; // добавлеие обновление инфы
+// delete objNew.age; // удаление 
+
+// console.log( objNew['is admin']) // если название в скобках
+
+
+// const user = {};
+// console.log(user);
+// user.name = 'da';
+// console.log(user);
+// user.SecondName = 'pp';
+// console.log(user);
+// user.name = 'net';
+// console.log(user);
+// delete user.name;
+// console.log(user);
+
+// функция котоаря возвращает true если у объекта нет свойств
+// const isEpty = (obj) => {
+//     for (key in obj){
+//         return false;
+//     }
+//     return true;
+// }
+
+// arr.push (); добавляет в конце
+// arr.pop(); удаляет в конце
+// arr.unshift(); добавляет в начало
+// arr.shift(); удаляет в начале
+
+// for ( item of arr){
+//     console.log(item)
+// }
+
+
