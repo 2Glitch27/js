@@ -271,3 +271,34 @@
 // }
 
 
+// function hello (str) {
+//   return str[0].toUppercase() + str.substr (1, str.length - 1).toLowerCase();
+// }
+
+// function m (n) {
+//     let arr = [];
+//    for (i = 0; i < n; i++){
+//     arr.push(n - i);
+//    }
+//    return arr;
+
+
+// }
+
+// function repeatStr (n, s){
+//     let str = '';
+//     for (i = n; i > 0; i--){
+//         str += s
+//     }
+//     return str;
+// }
+// function repeatStr (n, s){
+//     let str = s
+// return str.repeat(n) или
+// return s.repeat(n)
+// }
+
+//const repeatStr = (n, s) => s.repeat(n)
+
+
+
