@@ -300,5 +300,34 @@
 
 //const repeatStr = (n, s) => s.repeat(n)
 
+// возведенние в степень 
+// function ad (a, b){
+//     if (b === 1){
+//         return 1
+//     }
+//     return a * ad(a, b - 1);
+// }
+// let x = document.getElementById('') id
+// const y = document.querySelector('.text') класс самый верхний
+// const y = document.querySelectorAll('.text') все с этим классом
+// const c = y.childNodes возвращает ноды 
+// const c = y.children возвращает теги
+// const next = y.nextElementSibling следуюший 
+// const next = y.previousElementSibling пред 
+// const btn = document.querySelector('button');
+// if (btn){
+//     btn.addEventListener('click', () => {
+//         btn.classList.add('red') добавить класс
+//         btn.classList.remove('red') удалить 
+            // btn.classList.toggle('red') при 1 добавляет при 2 удаляет
+            // if (btn.classList.contains('red')) проверка 
+//     })
+// }
+
+
+
+
+
+
 
 
