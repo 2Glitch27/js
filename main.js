@@ -327,6 +327,45 @@
 
 
 
+// методы массивов
+// const str = 'строка'
+// console.log(str.split().join('')) перевод в массив и обратно в строку
+// console.log(str.split(''))
+// console.log(str.replace(указывается что нужно оставить))
+// console.log(str.split(' '))  перевод строк в массивы
+// console.log (str.revarse()) переворачивает массив
+
+// const isP = (word) => {
+//    if (word.toLowerCase() === word.toLowerCase().split('').revarse().join('')){
+//     return true
+//    }
+//    return false
+// }
+
+// console.log (word.split(' ').reverse().join()) сравнение строки
+
+
+// arr.forEach(item => {
+//     console.log(item)
+// })
+
+// let dud = numbers.map (item => item *2) создает новый массив 
+
+// let n = numbers.filter (num = > num % 2 === 0) на основе условия вытаскивает значение
+
+// console.log (numbers.sort((a, b) => b - a)) сортировка 
+// console.log (numbers.some(num => num > 1)) выводит t/f если хотя бы 1 правильно
+// console.log (numbers.every(num => num > 0)) проверяет все и отдает t/f если все правильно
+//console.log (arr1.concat(arr2, [5,6])) об массивы 
+// console.log (array.splice(1, 1)) 1 начать и 1 сколько ост обрезает
+
+
+
+
+
+
+
+
 
 
 
