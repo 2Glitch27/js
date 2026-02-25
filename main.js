@@ -359,9 +359,55 @@
 //console.log (arr1.concat(arr2, [5,6])) об массивы 
 // console.log (array.splice(1, 1)) 1 начать и 1 сколько ост обрезает
 
+// const now = new Date(); выводит время
+// const data = new Date('2023-12-31'); выводит указанное время
+// now.get 
+// now.set 
 
 
+// function addDays(date, days){
+// const result = new Date(date)
+// result.getDate(result.getDate() + days)
+// return result;
+// }
 
+
+// function vali(date){
+//     return date instanceof Date && !isNaN(date)
+// }
+
+// class Person {
+//     constructor(name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+
+//     sayHi(){
+//         alert(`hi, ${this.name}`)
+//     }
+// }
+// const human = new Person ('name', 'age')
+// human.sayHi();
+// class L extends Person {
+
+// }
+
+
+// class Book {
+//     constructor(title, author, year ){
+//         this.title = title;
+//         this.author = author;
+//         this.year = year;
+//     }
+//     read(){
+//         return(`Надо прочитать ${this.title}, ${this.author}, ${this.year}`)
+//     }
+// }
+
+// const x = new Book('')
+// x.read()
+
+// 9.1 и 9.2
 
 
 
