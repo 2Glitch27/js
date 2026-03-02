@@ -409,6 +409,121 @@
 
 // 9.1 и 9.2
 
+// class Person {
+//     constructor(name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     sayHi(){
+//         console.log(`hi ${this.name}`)
+//     }
+
+// }
+// const man = new Person ('da', 14);
+// man.sayHi();
+
+
+// class Worker extends Person {
+//     constructor (name, age, position, iq){
+//         super(name, age);
+//         this.position = position;
+//         this._iq = iq
+//     }
+//     get iq(){
+//         return this._iq
+//     }
+//     set iq(value){
+//         this._iq = value;
+//     }
+
+// }
+
+
+
+
+// class BankAccount{
+//     constructor(name, balance){
+//         this.name =name;
+//         this.balance = balance
+//     }
+//     deposit(amount){
+//         if (amount > 0){
+//             this.balance += amount
+//         }else {
+//             console.log('net')
+//         }
+//     }
+//     withdraw(amount){
+//         if (amount > this.balance){
+//             console.log('net deneg')
+//         }else if (amount < 0){
+//             console.log('ne otric')
+//         }else{
+//             this.balance -= amount;
+//         }
+//     }
+//     check(){
+//         console.log(this.balance)
+//     }
+// }
+
+
+// class Student {
+//     constructor (name, Fname){
+//         this.name = name;
+//         this.Fname = Fname;
+//         this.grades = [];
+
+//     }
+//     addGrade(subject, grade){
+//         this.grades.push({
+//             subject: subject,
+//             grade: grade,
+//         });
+
+//     }
+//     getAverseGrade(){
+//         let sum = 0;
+//         if (this.grades.length === 0){
+//             return sum;
+//         }
+//         this.grades.forEach(item => {
+//             sum += item.grade;
+//         })
+//         return Math.round(sum / this.grades.length)
+
+
+//     }
+//     getInfo(){
+
+//     }
+// }
+
+
+// class User {
+//     constructor (password){
+//         this._password = password;
+//     }
+//     get password(){
+//         return this._password.replace(/./g, '*')
+//     }
+//     set password(value){
+//         if (value.length < 6){
+//             return 
+//         }
+//     }
+
+//     checkPassword(attemp){
+//         return this._password === attemp;
+//     }
+// }
+
+
+
+
+
+
+
 
 
 
