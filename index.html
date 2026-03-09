@@ -6,6 +6,52 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- <div class="parent">
+        <div class="child">
+            da
+        </div>
+    </div> -->
+    <header>dd</header>
+    <div class="button-up"></div>
+    <ul class="to-do">
+        <li>задача 1<button class="delet">x</button></li>
+        <li>задача 2<button class="delet">x</button></li>
+        <li>задача 3<button class="delet">x</button></li>
+    </ul>
+    <p>
+        ширина <span class ="width"></span>
+    </p>
+     <p>
+        высота <span class ="height"></span>
+    </p>
+    <button class="add-tasr">добавить</button>
+
+    <div class="box"></div>
+    <style>
+        .button-up{
+            position: fixed;
+            bottom: 50px;
+            resize: 50px;
+            background-color: rebeccapurple;
+        }
+        .box{
+            height: 300px;
+            width: 300px;
+            background-color: red;
+        }
+        header{
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        header.js-scroll{
+            background-color: rebeccapurple;
+        }
+    </style>
     <script src="main.js"></script>
 </body>
 </html>

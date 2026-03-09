@@ -521,15 +521,118 @@
 
 
 
+// const parent = document.querySelector('.parent')
+// const child = document.querySelector('.child')
+
+
+// parent.addEventListener('click', () =>{
+//     console.log('ad')
+// })
+
+// child.addEventListener('click', (e) =>{
+//     console.log('ff')
+//     e.stopPropagation()
+// })
 
 
 
+const addTaskBtn = document.querySelector('.add-tasr')
+const toDoList = document.querySelector('.to-do')
+
+
+addTaskBtn.addEventListener('click', () =>{
+    const newLi = document.createElement('li');
+    newLi.innerHTML = `новая задача <button class='delete'>x</button>`
+    toDoList.appendChild(newLi);
+})
+
+
+// const remuveBtn = document.querySelectorAll('.delete');
+// remuveBtn.forEach(btn =>{
+//     btn.addEventListener('click', () => {
+//         // btn.parentElement
+//         btn.closest('li').remove();
+
+//     })
+// })
 
 
 
+toDoList.addEventListener('click', (e) =>{
+console.log(e.target); 
+if(e.target.classList.contains('delete')){
+    e.target.closest('li').remove();
+}
+})
+
+
+window.addEventListener('resize', () =>{
+    console.log('aa')
+})
+
+
+const width = document.querySelector('.width')
+const height = document.querySelector('.height')
+
+const up = () =>{
+    width.textContent = window.innerWidth;
+    height.textContent = window.innerHeight;
+
+}
+
+window.addEventListener('resize', () =>{
+    up();
+})
+// window.addEventListener('resize', up())
+
+
+const box = document.querySelector('.box')
+const rect = box.getBoundingClientRect();
+console.log(rect);
+console.log(box.clientHeight);
+console.log(box.clientWidth);
 
 
 
+window.addEventListener('scroll', () =>{
+    if(window.scroll > 50){
+        header.classList.add('.js-scroll')
+    }else{
+        header.classList.remove('.js-scroll')
+
+    }
+})
+
+window.scrollTo(0, 500);
+setTimeout(() => {
+window.scrollBy(0, 500)
+    
+}, 1000);
+
+
+const btnUp = document.querySelector('.button-up')
+btnUp.addEventListener('click', () =>{
+    width.scrollTo(0,0)
+})
+
+
+box.scrollIntoView({
+    behavior: 'smooth',
+    block:'start'
+});
 
 
 
+const infinityScroll = () =>{
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollPosition = window.scrollY + window.innerHeight;
+
+    if(documentHeight - scrollPosition < 100){
+
+    }
+}
+
+window.addEventListener('scroll', infinityScroll())
+
+
+//nvm
