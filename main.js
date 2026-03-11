@@ -529,110 +529,254 @@
 //     console.log('ad')
 // })
 
-// child.addEventListener('click', (e) =>{
-//     console.log('ff')
-//     e.stopPropagation()
+// // child.addEventListener('click', (e) =>{
+// //     console.log('ff')
+// //     e.stopPropagation()
+// // })
+
+
+
+// const addTaskBtn = document.querySelector('.add-tasr')
+// const toDoList = document.querySelector('.to-do')
+
+
+// addTaskBtn.addEventListener('click', () =>{
+//     const newLi = document.createElement('li');
+//     newLi.innerHTML = `новая задача <button class='delete'>x</button>`
+//     toDoList.appendChild(newLi);
 // })
 
 
+// // const remuveBtn = document.querySelectorAll('.delete');
+// // remuveBtn.forEach(btn =>{
+// //     btn.addEventListener('click', () => {
+// //         // btn.parentElement
+// //         btn.closest('li').remove();
 
-const addTaskBtn = document.querySelector('.add-tasr')
-const toDoList = document.querySelector('.to-do')
-
-
-addTaskBtn.addEventListener('click', () =>{
-    const newLi = document.createElement('li');
-    newLi.innerHTML = `новая задача <button class='delete'>x</button>`
-    toDoList.appendChild(newLi);
-})
+// //     })
+// // })
 
 
-// const remuveBtn = document.querySelectorAll('.delete');
-// remuveBtn.forEach(btn =>{
-//     btn.addEventListener('click', () => {
-//         // btn.parentElement
-//         btn.closest('li').remove();
 
-//     })
+// toDoList.addEventListener('click', (e) =>{
+// console.log(e.target); 
+// if(e.target.classList.contains('delete')){
+//     e.target.closest('li').remove();
+// }
 // })
 
 
-
-toDoList.addEventListener('click', (e) =>{
-console.log(e.target); 
-if(e.target.classList.contains('delete')){
-    e.target.closest('li').remove();
-}
-})
+// window.addEventListener('resize', () =>{
+//     console.log('aa')
+// })
 
 
-window.addEventListener('resize', () =>{
-    console.log('aa')
-})
+// const width = document.querySelector('.width')
+// const height = document.querySelector('.height')
+
+// const up = () =>{
+//     width.textContent = window.innerWidth;
+//     height.textContent = window.innerHeight;
+
+// }
+
+// window.addEventListener('resize', () =>{
+//     up();
+// })
+// // window.addEventListener('resize', up())
 
 
-const width = document.querySelector('.width')
-const height = document.querySelector('.height')
-
-const up = () =>{
-    width.textContent = window.innerWidth;
-    height.textContent = window.innerHeight;
-
-}
-
-window.addEventListener('resize', () =>{
-    up();
-})
-// window.addEventListener('resize', up())
-
-
-const box = document.querySelector('.box')
-const rect = box.getBoundingClientRect();
-console.log(rect);
-console.log(box.clientHeight);
-console.log(box.clientWidth);
+// const box = document.querySelector('.box')
+// const rect = box.getBoundingClientRect();
+// console.log(rect);
+// console.log(box.clientHeight);
+// console.log(box.clientWidth);
 
 
 
-window.addEventListener('scroll', () =>{
-    if(window.scroll > 50){
-        header.classList.add('.js-scroll')
-    }else{
-        header.classList.remove('.js-scroll')
+// window.addEventListener('scroll', () =>{
+//     if(window.scroll > 50){
+//         header.classList.add('.js-scroll')
+//     }else{
+//         header.classList.remove('.js-scroll')
 
-    }
-})
+//     }
+// })
 
-window.scrollTo(0, 500);
-setTimeout(() => {
-window.scrollBy(0, 500)
+// window.scrollTo(0, 500);
+// setTimeout(() => {
+// window.scrollBy(0, 500)
     
-}, 1000);
+// }, 1000);
 
 
-const btnUp = document.querySelector('.button-up')
-btnUp.addEventListener('click', () =>{
-    width.scrollTo(0,0)
-})
+// const btnUp = document.querySelector('.button-up')
+// btnUp.addEventListener('click', () =>{
+//     width.scrollTo(0,0)
+// })
 
 
-box.scrollIntoView({
-    behavior: 'smooth',
-    block:'start'
-});
+// box.scrollIntoView({
+//     behavior: 'smooth',
+//     block:'start'
+// });
 
 
 
-const infinityScroll = () =>{
-    const documentHeight = document.documentElement.scrollHeight;
-    const scrollPosition = window.scrollY + window.innerHeight;
+// const infinityScroll = () =>{
+//     const documentHeight = document.documentElement.scrollHeight;
+//     const scrollPosition = window.scrollY + window.innerHeight;
 
-    if(documentHeight - scrollPosition < 100){
+//     if(documentHeight - scrollPosition < 100){
 
-    }
-}
+//     }
+// }
 
-window.addEventListener('scroll', infinityScroll())
+// window.addEventListener('scroll', infinityScroll())
 
 
 //nvm
+
+
+
+
+
+function splitEvenOdd(arr){
+    let start = [];
+    let end = [];
+    for (item of arr){
+        if (item % 2 === 0){
+            start.push(item);
+        }end.push(item)
+    }
+    
+    return start.concat(end)
+}
+
+console.log(splitEvenOdd([1,2,3,4,5,6]))
+
+
+function averageOfArray(arr){
+    let average = 0
+     arr.forEach(item => {
+        average +=item
+    });
+    return average / arr.length
+    
+}
+
+console.log(averageOfArray([10, 20, 30, 40]))
+
+
+function censorWord (str, word){
+    let m = str.split(' ')
+    m.forEach((item, index) => {
+        if(item === word){
+            m[index] = '[цензура]'
+        }
+    })
+    return m.join(' ')
+}
+
+console.log(censorWord('js это крутою Я люблю js', 'js' ))
+
+const x = {
+    ap: 5,
+    b: 2, 
+    c: 3,
+}
+function addToCart (cart, productNume, amount){
+if (productNume in cart){
+    cart[productNume] += amount
+}
+cart[productNume] = (amount)
+return cart
+}
+console.log(addToCart(x, 'b', 4))
+
+
+
+
+
+
+
+
+// function swapKeysAndValue(obj){
+//     for ()
+// }
+
+
+// function filterStrings (arr, minLength){
+//     let x = arr.filter((item, index, ))
+// }
+
+
+
+
+
+// const regex = /hi/ 
+// console.log(regex)
+
+// const pattern = 'hi';
+// const regex = new RegExp(pattern);
+// console.log(regex);
+// const text = 'hi vse';
+
+
+// console.log(text.match(regex));
+// console.log(regex.test('hi vse'));
+
+
+
+//     /\d/ (digit) - цифра от 0 - 9
+//     /\D/ не цифра
+//     /\w/ любая латинская буква, цифра или знак подчеркивания
+//     /\W/ все что не входит в /\w/
+//     /\s/ (space) - пробелы, табуляция и перевод строки
+//     /\S/ любой не пробельный символ
+//     /./ любой символ кроме перевода строки
+const phone ='123-456'
+console.log(/\d\d\d-\d\d\d/.test(phone))
+
+//       /\d{n}/ продублировать n раз
+//        /\d{n, m}/ 
+
+//       /\d{n,}/ n и более раз
+
+
+// console.log(/colou?r/.test('color'))
+// console.log(/colou?r/.test('colour')) символ перед ним становится не обязантельным
+
+
+// якорая - они ищут позицию в строке
+// ^ - начало строки 
+// $ - конец строки
+
+const regex = /^\d{5}$/
+
+console.log(regex.test('1234'))
+console.log(regex.test('123456789'))
+console.log(regex.test('dadafgh'))
+
+// наборы и диапазоны
+// [abc] либо а либо b либо с
+// [a-z] любая строчная внутри данного диапазона
+
+// [0-9] аналог \d 
+
+
+// [а-яё] любая русская буква
+// [^abc] любой символ кроме тех что после него
+
+
+// console.log(/^[A-Z]/.test ('Hi'))
+// console.log(/hi/i.test('Hi')) перестает учитывтаь регистр если добавить i
+// console.log('1,2,3,4'.match(/\d/g)) выводит список всех вхождений а не тольок первое
+
+
+function validateEmail(email){
+    const regex = /^[\w.-]+@[a-z]+\.[a-z]{2,6}$/
+    return regex.test(email)
+}
+
+
