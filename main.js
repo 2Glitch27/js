@@ -641,142 +641,227 @@
 
 
 
-function splitEvenOdd(arr){
-    let start = [];
-    let end = [];
-    for (item of arr){
-        if (item % 2 === 0){
-            start.push(item);
-        }end.push(item)
-    }
+// function splitEvenOdd(arr){
+//     let start = [];
+//     let end = [];
+//     for (item of arr){
+//         if (item % 2 === 0){
+//             start.push(item);
+//         }end.push(item)
+//     }
     
-    return start.concat(end)
-}
+//     return start.concat(end)
+// }
 
-console.log(splitEvenOdd([1,2,3,4,5,6]))
+// console.log(splitEvenOdd([1,2,3,4,5,6]))
 
 
-function averageOfArray(arr){
-    let average = 0
-     arr.forEach(item => {
-        average +=item
-    });
-    return average / arr.length
+// function averageOfArray(arr){
+//     let average = 0
+//      arr.forEach(item => {
+//         average +=item
+//     });
+//     return average / arr.length
     
-}
+// }
 
-console.log(averageOfArray([10, 20, 30, 40]))
+// console.log(averageOfArray([10, 20, 30, 40]))
 
 
-function censorWord (str, word){
-    let m = str.split(' ')
-    m.forEach((item, index) => {
-        if(item === word){
-            m[index] = '[цензура]'
+// function censorWord (str, word){
+//     let m = str.split(' ')
+//     m.forEach((item, index) => {
+//         if(item === word){
+//             m[index] = '[цензура]'
+//         }
+//     })
+//     return m.join(' ')
+// }
+
+// console.log(censorWord('js это крутою Я люблю js', 'js' ))
+
+// const x = {
+//     ap: 5,
+//     b: 2, 
+//     c: 3,
+// }
+// function addToCart (cart, productNume, amount){
+// if (productNume in cart){
+//     cart[productNume] += amount
+// }
+// cart[productNume] = (amount)
+// return cart
+// }
+// console.log(addToCart(x, 'b', 4))
+
+
+
+
+
+
+
+
+// // function swapKeysAndValue(obj){
+// //     for ()
+// // }
+
+
+// // function filterStrings (arr, minLength){
+// //     let x = arr.filter((item, index, ))
+// // }
+
+
+
+
+
+// // const regex = /hi/ 
+// // console.log(regex)
+
+// // const pattern = 'hi';
+// // const regex = new RegExp(pattern);
+// // console.log(regex);
+// // const text = 'hi vse';
+
+
+// // console.log(text.match(regex));
+// // console.log(regex.test('hi vse'));
+
+
+
+// //     /\d/ (digit) - цифра от 0 - 9
+// //     /\D/ не цифра
+// //     /\w/ любая латинская буква, цифра или знак подчеркивания
+// //     /\W/ все что не входит в /\w/
+// //     /\s/ (space) - пробелы, табуляция и перевод строки
+// //     /\S/ любой не пробельный символ
+// //     /./ любой символ кроме перевода строки
+// const phone ='123-456'
+// console.log(/\d\d\d-\d\d\d/.test(phone))
+
+// //       /\d{n}/ продублировать n раз
+// //        /\d{n, m}/ 
+
+// //       /\d{n,}/ n и более раз
+
+
+// // console.log(/colou?r/.test('color'))
+// // console.log(/colou?r/.test('colour')) символ перед ним становится не обязантельным
+
+
+// // якорая - они ищут позицию в строке
+// // ^ - начало строки 
+// // $ - конец строки
+
+// const regex = /^\d{5}$/
+
+// console.log(regex.test('1234'))
+// console.log(regex.test('123456789'))
+// console.log(regex.test('dadafgh'))
+
+// // наборы и диапазоны
+// // [abc] либо а либо b либо с
+// // [a-z] любая строчная внутри данного диапазона
+
+// // [0-9] аналог \d 
+
+
+// // [а-яё] любая русская буква
+// // [^abc] любой символ кроме тех что после него
+
+
+// // console.log(/^[A-Z]/.test ('Hi'))
+// // console.log(/hi/i.test('Hi')) перестает учитывтаь регистр если добавить i
+// // console.log('1,2,3,4'.match(/\d/g)) выводит список всех вхождений а не тольок первое
+
+
+// function validateEmail(email){
+//     const regex = /^[\w.-]+@[a-z]+\.[a-z]{2,6}$/
+//     return regex.test(email)
+// }
+
+
+
+// const user = {
+//     name : 'ad',
+//     age : 22,
+//     isAdmin : true,
+//     skills : ['HTML', 'CSS'],
+//     adress :{
+//         city : 'daa',
+//         street :'nnn',
+//     }
+// }
+
+
+// {
+//     "name": "aaa",
+//     "age" : 22,
+//     "isAdmin" : true,
+// }
+
+// console.log(JSON.stringify(user))
+
+// const resp = '{"success" : true, "id": 124}';
+// console.log(JSON.parse(resp))
+
+
+
+// fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/301', {
+//     method: 'GET',
+//     headers: {
+//         'X-API-KEY': 'b880f230-e55d-4dc1-a1a5-839845de034c',
+//         'Content-Type': 'application/json',
+//     },
+// })
+//     .then(res => res.json())
+//     .then(json => console.log(json))
+//     .catch(err => console.log(err))
+
+
+const API_KEY = 'b880f230-e55d-4dc1-a1a5-839845de034c';
+const BASE_URL = 'https://kinopoiskapiunofficial.tech/api/';
+const prealoder = document.querySelector('svg')
+function searchFilms(query){
+    if (!query.trim()) return;
+
+    fetch (`${BASE_URL}v2.1/films/search-by-keyword?keyword=${query}`, 
+        {
+            headers : {
+                'X-API-KEY': API_KEY,
+                'Content-Type': 'application/json',
+            }
         }
+    )
+    .then(response => response.json())
+    .then(json => displayMovies(json.films))
+
+}
+
+function displayMovies (films){
+    const container = document.querySelector('.movies');
+    container.innerHTML = '';
+
+    films.slice(0, 10).forEach(film => {
+        const card = document.createElement('div');
+        card.className = 'movie-card';
+        card.innerHTML = `
+        <img src="${film.posterUrlPreview}" alt="${film.nameRu}">
+        <h3>${film.nameRu}</h3>
+        `
+
+        container.appendChild(card);
+       
     })
-    return m.join(' ')
+    prealoder.classList.add('.js-hidden');
 }
 
-console.log(censorWord('js это крутою Я люблю js', 'js' ))
 
-const x = {
-    ap: 5,
-    b: 2, 
-    c: 3,
-}
-function addToCart (cart, productNume, amount){
-if (productNume in cart){
-    cart[productNume] += amount
-}
-cart[productNume] = (amount)
-return cart
-}
-console.log(addToCart(x, 'b', 4))
+const searchBtn = document.querySelector('.search-btn');
+searchBtn,addEventListener ('click', () =>{
+    const query = document.querySelector('.search-input').value
+    prealoder.classList.remove('.js-hidden');
+    searchFilms(query)
+})
 
-
-
-
-
-
-
-
-// function swapKeysAndValue(obj){
-//     for ()
-// }
-
-
-// function filterStrings (arr, minLength){
-//     let x = arr.filter((item, index, ))
-// }
-
-
-
-
-
-// const regex = /hi/ 
-// console.log(regex)
-
-// const pattern = 'hi';
-// const regex = new RegExp(pattern);
-// console.log(regex);
-// const text = 'hi vse';
-
-
-// console.log(text.match(regex));
-// console.log(regex.test('hi vse'));
-
-
-
-//     /\d/ (digit) - цифра от 0 - 9
-//     /\D/ не цифра
-//     /\w/ любая латинская буква, цифра или знак подчеркивания
-//     /\W/ все что не входит в /\w/
-//     /\s/ (space) - пробелы, табуляция и перевод строки
-//     /\S/ любой не пробельный символ
-//     /./ любой символ кроме перевода строки
-const phone ='123-456'
-console.log(/\d\d\d-\d\d\d/.test(phone))
-
-//       /\d{n}/ продублировать n раз
-//        /\d{n, m}/ 
-
-//       /\d{n,}/ n и более раз
-
-
-// console.log(/colou?r/.test('color'))
-// console.log(/colou?r/.test('colour')) символ перед ним становится не обязантельным
-
-
-// якорая - они ищут позицию в строке
-// ^ - начало строки 
-// $ - конец строки
-
-const regex = /^\d{5}$/
-
-console.log(regex.test('1234'))
-console.log(regex.test('123456789'))
-console.log(regex.test('dadafgh'))
-
-// наборы и диапазоны
-// [abc] либо а либо b либо с
-// [a-z] любая строчная внутри данного диапазона
-
-// [0-9] аналог \d 
-
-
-// [а-яё] любая русская буква
-// [^abc] любой символ кроме тех что после него
-
-
-// console.log(/^[A-Z]/.test ('Hi'))
-// console.log(/hi/i.test('Hi')) перестает учитывтаь регистр если добавить i
-// console.log('1,2,3,4'.match(/\d/g)) выводит список всех вхождений а не тольок первое
-
-
-function validateEmail(email){
-    const regex = /^[\w.-]+@[a-z]+\.[a-z]{2,6}$/
-    return regex.test(email)
-}
 
 
