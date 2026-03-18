@@ -818,50 +818,136 @@
 //     .catch(err => console.log(err))
 
 
-const API_KEY = 'b880f230-e55d-4dc1-a1a5-839845de034c';
-const BASE_URL = 'https://kinopoiskapiunofficial.tech/api/';
-const prealoder = document.querySelector('svg')
-function searchFilms(query){
-    if (!query.trim()) return;
 
-    fetch (`${BASE_URL}v2.1/films/search-by-keyword?keyword=${query}`, 
-        {
-            headers : {
-                'X-API-KEY': API_KEY,
-                'Content-Type': 'application/json',
-            }
-        }
-    )
-    .then(response => response.json())
-    .then(json => displayMovies(json.films))
 
-}
 
-function displayMovies (films){
-    const container = document.querySelector('.movies');
-    container.innerHTML = '';
 
-    films.slice(0, 10).forEach(film => {
-        const card = document.createElement('div');
-        card.className = 'movie-card';
-        card.innerHTML = `
-        <img src="${film.posterUrlPreview}" alt="${film.nameRu}">
-        <h3>${film.nameRu}</h3>
-        `
 
-        container.appendChild(card);
+// const API_KEY = 'b880f230-e55d-4dc1-a1a5-839845de034c';
+// const BASE_URL = 'https://kinopoiskapiunofficial.tech/api/';
+// const prealoder = document.querySelector('svg')
+// function searchFilms(query){
+//     if (!query.trim()) return;
+
+//     fetch (`${BASE_URL}v2.1/films/search-by-keyword?keyword=${query}`, 
+//         {
+//             headers : {
+//                 'X-API-KEY': API_KEY,
+//                 'Content-Type': 'application/json',
+//             }
+//         }
+//     )
+//     .then(response => response.json())
+//     .then(json => displayMovies(json.films))
+
+// }
+
+// function displayMovies (films){
+//     const container = document.querySelector('.movies');
+//     container.innerHTML = '';
+
+//     films.slice(0, 10).forEach(film => {
+//         const card = document.createElement('div');
+//         card.className = 'movie-card';
+//         card.innerHTML = `
+//         <img src="${film.posterUrlPreview}" alt="${film.nameRu}">
+//         <h3>${film.nameRu}</h3>
+//         `
+
+//         container.appendChild(card);
        
-    })
-    prealoder.classList.add('.js-hidden');
+//     })
+//     prealoder.classList.add('.js-hidden');
+// }
+
+
+// const searchBtn = document.querySelector('.search-btn');
+// searchBtn,addEventListener ('click', () =>{
+//     const query = document.querySelector('.search-input').value
+//     prealoder.classList.remove('.js-hidden');
+//     searchFilms(query)
+// })
+
+
+const userInput = document.querySelector('[name="username"]')
+const emailInput = document.querySelector('[name="email"]')
+const userAlert = document.querySelector('.username-error')
+const emailAlert = document.querySelector('.email-error')
+
+
+
+const showError = (input, container, message) =>{
+    input.style.border = '2px solid red';
+    container.textContent = message;
 }
 
+const showSuccess = (input, container) =>{
+    input.style.border = '2px solid green';
+    container.textContent = '';
+}
 
-const searchBtn = document.querySelector('.search-btn');
-searchBtn,addEventListener ('click', () =>{
-    const query = document.querySelector('.search-input').value
-    prealoder.classList.remove('.js-hidden');
-    searchFilms(query)
+const validateEmail = (email) =>{
+    const regex = /^[\w.-]+@[a-z]+\.[a-z]{2,6}$/
+    return regex.test(email)
+}
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // const name = document.querySelector('[name="username"]').value;
+    // const email = document.querySelector('[name="email"]').value;
+    // console.log({name, email})
+    const formData = new FormData(form)
+    console.log(formData)
+    for (let [key, value] of formData.entries()){
+        console.log(`${key} : ${value}`)
+    }
+
+    // const data = Object.fromEntries(formData);
+
+    let isValid = true;
+
+    if (!data.username) {
+        showError(userInput, userAlert, 'Поле обязательно');
+        isValid = false;
+    } else if (!data.username.length > 2){
+        showError(userInput, userAlert, 'Больше 2');
+        isValid = false;
+    }
+
+    if (!data.email){
+        showError(emailInput, emailAlert, 'Email обязателен');
+        isValid = false;
+    }else if (!validateEmail(data.email)){
+        showError(emailInput, emailAlert, 'Email введен некорректно');
+        isValid = false;
+    }
+
+
+    if (!isValid){
+        return;
+    }
+    alert('ok')
+
+    fetch('....', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'aplication/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => {
+            if (!response.ok){
+                alert('net')
+            }
+            const result = response.json();
+
+            alert('da')
+            form.reset();
+            showSuccess(userInput, userAlert);
+            showSuccess(emailInput, emailAlert);
+
+        })
+
 })
 
-
-
+jsonPlaceholder
